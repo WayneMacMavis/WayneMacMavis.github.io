@@ -1,3 +1,12 @@
+
+
+$('a').click(function(){
+  $('html, body').animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+  },1000);
+  return false;
+});
+
 // Get the container element
 var btnContainer = document.getElementById("myDIV");
 
@@ -19,19 +28,6 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-function togNav() {
-  var nav = document.querySelector("nav");
-  if (nav.style.width == '10%') {
-    nav.style.width = "100%";
-    nav.style.top = '0';
-    // nav.style.opacity = 0;
-  } else {
-    nav.style.width = '10%';
-    nav.style.top = '7%';
-    // nav.style.opacity = 0;
-  }
-}
-
 function typeEffect(element, speed) {
 	var text = element.innerHTML;
 	element.innerHTML = "";
@@ -47,9 +43,8 @@ function typeEffect(element, speed) {
   }, speed);
 }
 
-
 // application
-var speed = 100;
+var speed = 110;
 var h1 = document.querySelector('h1');
 var h2 = document.querySelector('h2');
 var delay = h1.innerHTML.length * speed + speed;
@@ -66,9 +61,6 @@ setTimeout(function(){
 }, delay);
 
 // Parallax effect
-// Adapted from @ilonacodes article ->  https://link.medium.com/7fFiON6Q1X
-
-// Update : added throttle to increase performance
 window.addEventListener('scroll', throttle(parallax, 14));
 
 function throttle(fn, wait) {
@@ -117,7 +109,7 @@ function check_if_in_view() {
 		var element_bottom_position = (element_top_position + element_height);
 
 		//check to see if this current container is within viewport
-		if ((element_bottom_position >= window_top_position) &&
+		if ((element_bottom_position = window_top_position) &&
 			(element_top_position <= window_bottom_position)) {
 		  $element.addClass('in-view');
 		} else {
