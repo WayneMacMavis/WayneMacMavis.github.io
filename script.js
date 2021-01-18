@@ -1,39 +1,83 @@
+const btnContainer = document.getElementById("myDIV");
+const btns = btnContainer.getElementsByClassName("btn");
+const speed = 110;
+const h1 = document.querySelector('h1');
+const h2 = document.querySelector('h2');
+const delay = h1.innerHTML.length * speed + speed;
+const $animation_elements = $('.animation-element');
+const $window = $(window);
 
+// $('a').click(function(){
+//   $('html, body').animate({
+//       scrollTop: $( $(this).attr('href') ).offset().top
+//   },1000);
+//   return false;
+// });
 
-$('a').click(function(){
-  $('html, body').animate({
-      scrollTop: $( $(this).attr('href') ).offset().top
-  },1000);
-  return false;
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+
+//     if (current.length > 0) {
+//       current[0].className = current[0].className.replace(" active", "");
+//     }
+
+//     this.className += " active";
+//   });
+// }
+
+// Cache selectors
+var lastId,
+    topMenu = $("nav"),
+    topMenuHeight = topMenu.outerHeight()-110,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 300);
+  e.preventDefault();
 });
 
-// Get the container element
-var btnContainer = document.getElementById("myDIV");
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href='#"+id+"']").parent().addClass("active");
+   }                   
+});
 
-// Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("btn");
-
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-
-    // If there's no active class
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
-    }
-
-    // Add the active class to the current/clicked button
-    this.className += " active";
-  });
-}
-
-function typeEffect(element, speed) {
-	var text = element.innerHTML;
+typeEffect = (element, speed) => {
+	let text = element.innerHTML;
 	element.innerHTML = "";
 	
-	var i = 0;
-	var timer = setInterval(function() {
+	let i = 0;
+	let timer = setInterval(function() {
     if (i < text.length) {
       element.append(text.charAt(i));
       i++;
@@ -43,28 +87,16 @@ function typeEffect(element, speed) {
   }, speed);
 }
 
-// application
-var speed = 110;
-var h1 = document.querySelector('h1');
-var h2 = document.querySelector('h2');
-var delay = h1.innerHTML.length * speed + speed;
-
-// type affect to header
 typeEffect(h1, speed), (delay);
 h2.style.opacity = "0";
 
-
-// type affect to body
 setTimeout(function(){
   h2.style.opacity = "1";
   typeEffect(h2, speed);
 }, delay);
 
-// Parallax effect
-window.addEventListener('scroll', throttle(parallax, 14));
-
 function throttle(fn, wait) {
-  var time = Date.now();
+  let time = Date.now();
   return function() {
     if ((time + wait - Date.now()) < 0) {
       fn();
@@ -74,10 +106,9 @@ function throttle(fn, wait) {
 };
 
 function parallax() {
-  var scrolled = window.pageYOffset;
-  var parallax = document.querySelector(".parallax");
-  // You can adjust the 0.4 to change the speed
-  var coords = (scrolled * 0.6) + 'px'
+  let scrolled = window.pageYOffset;
+  let parallax = document.querySelector(".parallax");
+  let coords = (scrolled * 0.6) + 'px'
   parallax.style.transform = 'translateY(' + coords + ')';
   parallax.style.filter = 'blur(200%)(' + coords + ')';
 };
@@ -94,10 +125,7 @@ $(window).scroll(function () {
   }
 });
 
-var $animation_elements = $('.animation-element');
-var $window = $(window);
-
-function check_if_in_view() {
+check_if_in_view = () => {
 	var window_height = $window.height();
 	var window_top_position = $window.scrollTop();
 	var window_bottom_position = (window_top_position + window_height);
@@ -118,5 +146,46 @@ function check_if_in_view() {
 	});
 }
 
+$( document ).ready(function() {
+  // Main variables
+    var $developmentWrapper = $('.development-wrapper');
+    var developmentIsVisible = false;
+
+
+  $(window).scroll( function(){
+  var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+  /*###### SKILLS SECTION ######*/
+
+    var middle_of_developmentWrapper = $developmentWrapper.offset().top + $developmentWrapper.outerHeight()/2;
+
+    if((bottom_of_window > middle_of_developmentWrapper) && (developmentIsVisible == false)){
+
+      $('.skills-bar-container li').each( function(){
+
+        var $barContainer = $(this).find('.bar-container');
+        var dataPercent = parseInt($barContainer.data('percent'));
+        var elem = $(this).find('.progressbar');
+        var percent = $(this).find('.percent');
+        var width = 0;
+
+        var id = setInterval(frame, 20);
+
+        function frame() {
+          if (width >= dataPercent) {
+              clearInterval(id);
+          } else {
+            width++;
+            elem.css("width", width+"%");
+            percent.html(width+" %");
+          }
+        }
+      });
+      developmentIsVisible = true;
+    }
+  });
+});
+
 $window.on('scroll resize', check_if_in_view);
 $window.trigger('scroll', check_if_in_view);
+window.addEventListener('scroll', throttle(parallax, 14));
