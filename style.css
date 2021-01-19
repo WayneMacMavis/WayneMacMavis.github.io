@@ -100,7 +100,7 @@
   width: 100vw;
   height: 110vh;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   filter: var(--brightness);
   z-index: 0;
   }
@@ -186,11 +186,11 @@
   background: -webkit-linear-gradient(to right, rgb(255, 255, 255), 60% rgb(43, 104, 161));
   margin: 0;
   padding: 0;
-  top: 85%;
+  top: 92%;
   height: 110vh;
   width: 100vw;
   position: absolute;
-  clip-path: polygon(0 0, 150% 30%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 190% 30%, 100% 100%, 0 100%);
   }
 
   .about-bg {
@@ -359,52 +359,52 @@
   color: #27ae60;
 }
 
-.skills img {
-  position: absolute;
-  top: 0vh;
-  left: -50px;
-  width: 50px;
+.skills .html {
+  position: relative;
+  top: -45px;
+  left: -80px;
+  width: 100px;
 }
 .skills .css {
-  position: absolute;
-  top: -35vh;
-  left: -328px;
-  width: 600px;
+  position: relative;
+  top: -45px;
+  left: -80px;
+  width: 100px;
 }
 
 .skills .js {
-  position: absolute;
-  top: -20vh;
-  left: -302px;
-  width: 550px;
+  position: relative;
+  top: -45px;
+  left: -80px;
+  width: 100px;
 }
 
 .skills .react {
-  position: absolute;
-  top: -8vh;
-  left: -317px;
-  width: 650px;
+  position: relative;
+  top: -45px;
+  left: -80px;
+  width: 100px;
 }
 
 .skills .jquery {
-  position: absolute;
-  top: 53vh;
-  left: -49px;
-  width: 42px;
+  position: relative;
+  top: -20px;
+  left: -50px;
+  width: 40px;
   background-color: whitesmoke;
 }
 
 .skills .bootstrap {
-  position: absolute;
-  top: 35vh;
-  left: -279px;
-  width: 500px;
+  position: relative;
+  top: -45px;
+  left: -75px;
+  width: 90px;
 }
 
 .skills .angularjs {
-  position: absolute;
-  top: 81vh;
-  left: -61px;
+  position: relative;
+  top: -45px;
+  left: -65px;
   width: 65px;
 }
 
