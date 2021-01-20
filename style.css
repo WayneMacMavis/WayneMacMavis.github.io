@@ -275,22 +275,22 @@
 
 .skills .content .development-wrapper .development-title {
   color: #3c3c3c;
-  font-size: 2em;
+  font-size: 30px;
   text-align: center;
-  margin-bottom: 25px;
-  margin-top: -60px;
+  margin-bottom: 15px;
+  margin-top: -55px;
 }
 .skills .content .development-wrapper .development-libraries {
   color: #3c3c3c;
-  font-size: 2em;
+  font-size: 30px;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .skills .content .development-wrapper .development-framework {
   color: #3c3c3c;
-  font-size: 2em;
+  font-size: 30px;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .skills .content .development-wrapper .skills-bar-container {
   position: relative;
@@ -317,7 +317,7 @@
   background: #ececec;
   position: relative;
   width: 100%;
-  height: 10px;
+  height: 2vh;
   border-radius: 50px;
 }
 .skills .content .development-wrapper .skills-bar-container li .bar-container .progressbar { /*Color*/
@@ -368,28 +368,28 @@
 .skills .css {
   position: relative;
   top: -45px;
-  left: -80px;
+  left: -85px;
   width: 100px;
 }
 
 .skills .js {
   position: relative;
   top: -45px;
-  left: -80px;
-  width: 100px;
+  left: -85px;
+  width: 95px;
 }
 
 .skills .react {
   position: relative;
-  top: -45px;
-  left: -80px;
-  width: 100px;
+  top: -50px;
+  left: -85px;
+  width: 110px;
 }
 
 .skills .jquery {
   position: relative;
   top: -20px;
-  left: -50px;
+  left: -55px;
   width: 40px;
   background-color: whitesmoke;
 }
@@ -397,13 +397,13 @@
 .skills .bootstrap {
   position: relative;
   top: -45px;
-  left: -75px;
+  left: -80px;
   width: 90px;
 }
 
 .skills .angularjs {
   position: relative;
-  top: -45px;
+  top: -35px;
   left: -65px;
   width: 65px;
 }
