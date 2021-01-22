@@ -278,7 +278,7 @@
   font-size: 30px;
   text-align: center;
   margin-bottom: 15px;
-  margin-top: -55px;
+  margin-top: -1%;
 }
 .skills .content .development-wrapper .development-libraries {
   color: #3c3c3c;
@@ -304,6 +304,7 @@
 .skills .content .development-wrapper .skills-bar-container li .progressbar-title {
   color: #3c3c3c;
   margin-bottom: 2px;
+  margin-left: 40px;
 }
 .skills .content .development-wrapper .skills-bar-container li .progressbar-title h3 {
   display: inline-block;
@@ -316,11 +317,11 @@
 .skills .content .development-wrapper .skills-bar-container li .bar-container {
   background: #ececec;
   position: relative;
-  width: 100%;
   height: 2vh;
-  border-radius: 50px;
+  border-radius: 4px;
+  margin-left: 30px;
 }
-.skills .content .development-wrapper .skills-bar-container li .bar-container .progressbar { /*Color*/
+.skills .content .development-wrapper .skills-bar-container li .bar-container .progressbar {
   background: #34495e;
   position: absolute;
   width: 0%;
@@ -359,35 +360,35 @@
   color: #27ae60;
 }
 
-.skills .html {
-  position: relative;
-  top: -45px;
+.skills .bar-container .progressbar img {
+  position: absolute;
+  margin-left: 4px;
+}
+
+.skills .bar-container .progressbar .html {
+  top: -50px;
   left: -80px;
   width: 100px;
 }
 .skills .css {
-  position: relative;
   top: -45px;
   left: -85px;
   width: 100px;
 }
 
 .skills .js {
-  position: relative;
   top: -45px;
   left: -85px;
   width: 95px;
 }
 
 .skills .react {
-  position: relative;
   top: -50px;
   left: -85px;
   width: 110px;
 }
 
 .skills .jquery {
-  position: relative;
   top: -20px;
   left: -55px;
   width: 40px;
@@ -395,14 +396,12 @@
 }
 
 .skills .bootstrap {
-  position: relative;
   top: -45px;
   left: -80px;
   width: 90px;
 }
 
 .skills .angularjs {
-  position: relative;
   top: -35px;
   left: -65px;
   width: 65px;
@@ -427,11 +426,7 @@
   }
 }
 @media screen and (min-width: 640px) {
-  .about-myself {
-    padding: 100px 40px;
-  }
-
-  .skills {
+ .skills {
     padding-left: 0;
     padding-right: 0;
   }
