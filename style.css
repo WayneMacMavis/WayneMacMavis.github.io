@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Imbue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
   :root {
   --primary-color: rgba(0, 0, 0, 0.726);
@@ -42,7 +43,7 @@
   body {
   color: var(--on-background);
   overflow-x: hidden;
-  background: rgb(0, 0, 0);
+  background: rgb(250, 248, 248);
   margin: 0;
   padding: 0;
   }
@@ -52,7 +53,7 @@
   width: 100%;
   mask-image: var(--primary-variant2);
   box-shadow: var(--box-shadow2);
-  z-index: 10;
+  z-index: 10000000;
   }
 
   nav ul {
@@ -97,12 +98,13 @@
   }
 
   #home {
+    position: relative;
   width: 100vw;
   height: 110vh;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); */
   filter: var(--brightness);
-  z-index: 0;
+  z-index: 1;
   }
 
   #home video {
@@ -134,7 +136,7 @@
   text-align: center;
   left: 50%;
   color: var(--primary-color);
-  text-shadow: 20px 16px 15px rgba(0, 0, 0, 0.685);
+  text-shadow: 18px 14px 7px rgba(0, 0, 0, 0.685);
   transform: translate(-50%, -50%);
   }
 
@@ -191,11 +193,12 @@
   width: 100vw;
   position: absolute;
   clip-path: polygon(0 0, 190% 30%, 100% 100%, 0 100%);
+  z-index: 10;
   }
 
   .about-bg {
-  width: 45vw;
-  height: 100vh;
+  width: 35vw;
+  height: 80vh;
   left: 0;
   margin: 0;
   padding: 0;
@@ -203,22 +206,37 @@
   filter: var(--brightness);
   }
 
-  .about-header {
-  font-size: 35px;
-  font-family: 'Kaushan Script', cursive;
+  .hey {
+    font-size: 60px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    text-decoration: underline;
+    font-style: italic;
   position: absolute;
   text-align: center;
-  right: 25%;
-  top: 22%;
+  right: 50%;
+  top: 12%;
+  text-shadow: -4px -4px 10px rgba(0, 38, 255, 0.685);
+  }
+
+  .about-header {
+  font-size: 40px;
+  font-family: 'Imbue', serif;
+  font-weight: 100;
+  font-style: italic;
+  position: absolute;
+  text-align: center;
+  right: 12%;
+  top: 25%;
   }
 
   .about-paragraph {
-  font-family: "Open Sans";
+    font-family: 'Imbue', serif;
   position: relative;
   text-align: center;
   right: 6%;
-  left: 50%;
-  top: -360px;
+  left: 45%;
+  top: -240px;
   bottom: 0;
   width: 48%;
   }
@@ -260,17 +278,61 @@
   transform: translate3d(0px, 0px, 0px);
   }
 
+  .parallax-bg {
+    /* The image used */
+    background-image: url("media/parallaximg.jpg");
+  
+    /* Set a specific height */
+    height: 150vh;
+    width: 100vw;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax-bg .para-header {
+    font-family: 'Imbue', serif;
+    letter-spacing: 8px;
+    font-size: 70px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: #00ffd5;
+    text-shadow: 16px 14px 5px rgba(0, 0, 0, 0.685);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+  .parallax-bg .overlay2 {
+    width: 100vw;
+    height: 58.2vh;
+    position: absolute;
+    top: 1217px;
+    background: var(--overlay);
+    z-index: 10;
+    }
+
 /*##### SKILLS SECTION #####*/
 .skills {
   display: block;
   overflow: hidden;
   background: var(--on-primary);
   background: -webkit-linear-gradient(to right, rgb(0, 0, 0), 60% rgb(26, 26, 26));
-  top: 85vh;
   height: 110vh;
   width: 100vw;
   position: relative;
   padding: 70px 20px;
+}
+
+.skills-bar-container {
+  height: 100%;
 }
 
 .skills .content .development-wrapper .development-title {
@@ -278,7 +340,7 @@
   font-size: 30px;
   text-align: center;
   margin-bottom: 15px;
-  margin-top: -1%;
+  margin-top: -6%;
 }
 .skills .content .development-wrapper .development-libraries {
   color: #3c3c3c;
@@ -352,7 +414,7 @@
 .skills .content .tools-knowledge-wrapper .knowledge-wrapper ul li {
   color: #444;
   font-weight: bold;
-  font-size: 1.1em;
+  /* font-size: 1.1em; */
   text-align: left;
 }
 .skills .content .tools-knowledge-wrapper .tools-wrapper ul li i,
@@ -363,48 +425,17 @@
 .skills .bar-container .progressbar img {
   position: absolute;
   margin-left: 4px;
+  width: 70px;
+  top: -30px;
+  bottom: -109px;
+  left: -70px;
 }
 
-.skills .bar-container .progressbar .html {
-  top: -50px;
-  left: -80px;
-  width: 100px;
-}
-.skills .css {
-  top: -45px;
-  left: -85px;
-  width: 100px;
-}
-
-.skills .js {
-  top: -45px;
-  left: -85px;
-  width: 95px;
-}
-
-.skills .react {
-  top: -50px;
-  left: -85px;
-  width: 110px;
-}
-
-.skills .jquery {
-  top: -20px;
-  left: -55px;
-  width: 40px;
-  background-color: whitesmoke;
-}
-
-.skills .bootstrap {
-  top: -45px;
-  left: -80px;
-  width: 90px;
-}
-
-.skills .angularjs {
-  top: -35px;
-  left: -65px;
-  width: 65px;
+.skills .bar-container .progressbar .jquery {
+  top: -25px;
+  left: -60px;
+  width: 50px;
+  background-color: white;
 }
 
 /* ############################
@@ -474,7 +505,7 @@
   .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  z-index: 100;
+  z-index: 10000000000000;
   position: fixed;
   left: 10px;
   top: 8px;
