@@ -313,8 +313,8 @@
   .parallax-bg .overlay2 {
     width: 100vw;
     height: 58.2vh;
-    position: absolute;
-    top: 202vh;
+    position: relative;
+    top: 92vh;
     background: var(--overlay);
     z-index: 10;
     }
