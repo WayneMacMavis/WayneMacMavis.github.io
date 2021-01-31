@@ -5,7 +5,7 @@
   --primary-color: rgba(0, 0, 0, 0.726);
   --primary-variant: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 25%, rgba(255, 255, 255, 0.4) 75%, rgba(255, 255, 255, 1) 100%);
   --primary-variant2:linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
-  --secondary-color: linear-gradient(to right, rgb(251, 251, 251), rgb(43, 104, 161));
+  --secondary-color: linear-gradient(to right, rgb(251, 251, 251), rgb(97, 250, 255));
   --on-primary: rgb(250, 250, 250);
   --on-background: rgb(66, 66, 66);
   --on-background-alt: rgba(66, 66, 66, 0.7);
@@ -22,7 +22,7 @@
   --primary-color:rgba(1, 248, 207, 0.8);
   --primary-variant: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 251, 251, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
   --primary-variant2: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
-  --secondary-color: linear-gradient(to right, rgb(251, 251, 251), rgb(14, 0, 144));
+  --secondary-color: linear-gradient(to right, rgb(251, 251, 251), rgb(65, 91, 93));
   --on-primary: #000;
   --on-background: rgba(255, 255, 255, 0.9);
   --on-background-alt: rgba(255, 255, 255, 0.7);
@@ -43,6 +43,7 @@
   body {
   color: var(--on-background);
   overflow-x: hidden;
+  width: 100vw;
   background: rgb(250, 248, 248);
   margin: 0;
   padding: 0;
@@ -102,7 +103,6 @@
   width: 100vw;
   height: 110vh;
   overflow: hidden;
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); */
   filter: var(--brightness);
   z-index: 1;
   }
@@ -145,13 +145,13 @@
   font-size: 60pt;
   font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 15%;
+  margin-bottom: 35vh;
   letter-spacing: 10px;
   }
 
   #home .profile-bg {
-  top: 38%;
-  left: 50%;
+  top: 50vh;
+  left: 50vw;
   right: -46%;
   border-radius: 50% 50% 50% 50%;
   display: block;
@@ -160,6 +160,7 @@
   opacity: 0.6;
   animation: fadein 5s;
   transform: translate(-50%, -50%);
+  transition: all 0.8s ease-out;
   }
 
   @keyframes fadein {
@@ -185,7 +186,7 @@
   background-size: cover;
   background-position: center;
   background: var(--secondary-color);
-  background: -webkit-linear-gradient(to right, rgb(255, 255, 255), 60% rgb(43, 104, 161));
+  background: -webkit-linear-gradient(to right, rgb(255, 255, 255), 60% rgb(107, 107, 107));
   margin: 0;
   padding: 0;
   top: 92%;
@@ -206,37 +207,25 @@
   filter: var(--brightness);
   }
 
-  .hey {
-    font-size: 60px;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 400;
-    text-decoration: underline;
-    font-style: italic;
-  position: absolute;
-  text-align: center;
-  right: 50%;
-  top: 12%;
-  text-shadow: -4px -4px 10px rgba(0, 38, 255, 0.685);
-  }
-
   .about-header {
-  font-size: 40px;
+  font-size: 30pt;
   font-family: 'Imbue', serif;
   font-weight: 100;
   font-style: italic;
   position: absolute;
   text-align: center;
-  right: 12%;
+  right: 16%;
   top: 25%;
   }
 
   .about-paragraph {
     font-family: 'Imbue', serif;
+    font-size: 15pt;
   position: relative;
   text-align: center;
   right: 6%;
   left: 45%;
-  top: -240px;
+  top: -285px;
   bottom: 0;
   width: 48%;
   }
@@ -294,8 +283,9 @@
 
   .parallax-bg .para-header {
     font-family: 'Imbue', serif;
+    text-align: center;
     letter-spacing: 8px;
-    font-size: 70px;
+    font-size: 50pt;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -329,6 +319,7 @@
   width: 100vw;
   position: relative;
   padding: 70px 20px;
+  z-index: 0;
 }
 
 .skills-bar-container {

@@ -1,0 +1,129 @@
+#work {
+  background: var(--on-primary);
+  width: 100vw;
+  height: 90vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+#work .items{
+  width: 50%;
+  height: 60%;
+  left: 23%;
+  top: 20%;
+  background: #333;
+  display: inline-block;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.685);
+}
+
+#work .items:hover {
+  top: 25%;
+  opacity: 0.7;
+}
+
+#work img {
+  width: 100%;
+  height: 100%;
+}
+
+#work .items {
+  position: absolute;
+}
+
+#work .main-pos {
+  margin-left: 2em;
+  z-index: 3000;
+  /*background-image: url('https://dl.dropbox.com/u/32649907/imgs/shadow.png');*/
+}
+
+#work .left-pos {
+  opacity: .3;
+  margin-left: -17em !important;
+  z-index: 1000;
+  -webkit-transform: scale(.75);
+  -moz-transform: scale(.75);
+  transform: scale(.75);
+}
+
+#work .left-pos:hover {
+  top: 20%;
+  opacity: .3;
+}
+
+#work .back-pos {
+  margin-left: 2em !important;
+  opacity: .05;
+  -webkit-transform: scale(.5);
+  -moz-transform: scale(.5);
+  transform: scale(.5);
+}
+
+#work .right-pos {
+  opacity: .3;
+  margin-left:  21em;
+  z-index: 1000;
+  -webkit-transform: scale(.70);
+  -moz-transform: scale(.70);
+  transform: scale(.70);
+}
+
+#work .right-pos:hover {
+  top: 20%;
+  opacity: .3;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  width: 3vmin;
+  height: 3vmin;
+  background: transparent;
+  border-top: 1vmin solid var(--active);
+  border-right: 1vmin solid var(--active);
+  transition: all 200ms ease;
+}
+.arrow.left {
+  left: 100px;
+  transform: translate3d(0, -50%, 0) rotate(-135deg);
+}
+.arrow.right {
+  right: 100px;
+  transform: translate3d(0, -50%, 0) rotate(45deg);
+}
+.arrow:hover {
+  border-color: orange;
+  box-shadow: 0.5vmin -0.5vmin 0 var(--active);
+}
+.arrow:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -60%) rotate(45deg);
+  width: 200%;
+  height: 200%;
+}
+
+#work h1 {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 25pt;
+  letter-spacing: 2px;
+  font-style: italic;
+  font-family: 'Imbue', serif;
+  color: var(--active);
+}
+
+#work h2 {
+  padding-top: 500px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-style: italic;
+  font-family: 'Imbue', serif;
+  color: var(--active);
+}

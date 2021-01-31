@@ -7,29 +7,10 @@ const delay = h1.innerHTML.length * speed + speed;
 const $animation_elements = $('.animation-element');
 const $window = $(window);
 
-// $('a').click(function(){
-//   $('html, body').animate({
-//       scrollTop: $( $(this).attr('href') ).offset().top
-//   },1000);
-//   return false;
-// });
-
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//     var current = document.getElementsByClassName("active");
-
-//     if (current.length > 0) {
-//       current[0].className = current[0].className.replace(" active", "");
-//     }
-
-//     this.className += " active";
-//   });
-// }
-
 // Cache selectors
 var lastId,
     topMenu = $("nav"),
-    topMenuHeight = topMenu.outerHeight()-110,
+    topMenuHeight = topMenu.outerHeight()+50,
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
@@ -38,11 +19,17 @@ var lastId,
       if (item.length) { return item; }
     });
 
+    $(document).ready(function(){
+      $(window).scroll(function(){
+          $(".profile-bg").css("opacity", 1 - $(window).scrollTop() + $('.profile-bg').height());
+      });
+  });
+
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
 menuItems.click(function(e){
   var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+100;
   $('html, body').stop().animate({ 
       scrollTop: offsetTop
   }, 600);
@@ -118,7 +105,7 @@ $(document).on('scroll', function() {
 })
 
 $(window).scroll(function () {
-  if ($(window).scrollTop() > 100) {
+  if ($(window).scrollTop() > 200) {
     $(".parallax").addClass("blur");
   } else {
     $(".parallax").removeClass("blur");
