@@ -48,11 +48,7 @@
   -webkit-transform: scale(.75);
   -moz-transform: scale(.75);
   transform: scale(.75);
-}
-
-#work .left-pos:hover {
-  top: 20%;
-  opacity: .3;
+  pointer-events: none;
 }
 
 #work .back-pos {
@@ -70,11 +66,7 @@
   -webkit-transform: scale(.70);
   -moz-transform: scale(.70);
   transform: scale(.70);
-}
-
-#work .right-pos:hover {
-  top: 20%;
-  opacity: .3;
+  pointer-events: none;
 }
 
 .arrow {
