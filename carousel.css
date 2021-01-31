@@ -86,6 +86,7 @@
   border-top: 1vmin solid var(--active);
   border-right: 1vmin solid var(--active);
   transition: all 200ms ease;
+  z-index: 10000000;
 }
 .arrow.left {
   left: 100px;
@@ -120,7 +121,7 @@
 }
 
 #work h2 {
-  padding-top: 500px;
+  padding-top: 68vh;
   text-align: center;
   letter-spacing: 2px;
   font-style: italic;
