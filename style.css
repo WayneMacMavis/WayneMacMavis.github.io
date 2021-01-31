@@ -147,6 +147,7 @@
   text-transform: uppercase;
   margin-bottom: 35vh;
   letter-spacing: 10px;
+  min-height: 40px;
   }
 
   #home .profile-bg {
@@ -177,6 +178,7 @@
   font-size: 35pt;
   font-style: italic;
   letter-spacing: 7px;
+  min-height: 50px;
   }
 
   /*##### ABOUT SECTION #####*/
